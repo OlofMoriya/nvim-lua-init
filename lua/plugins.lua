@@ -45,6 +45,20 @@ function M.setup()
     use('theprimeagen/harpoon')
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
+    -- Packer
+    use({
+        "jackMort/ChatGPT.nvim",
+        config = function()
+            require("chatgpt").setup({
+                -- optional configuration
+            })
+        end,
+        requires = {
+            "MunifTanjim/nui.nvim",
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope.nvim"
+        }
+    })
     use {
 	  'VonHeikemen/lsp-zero.nvim',
 	  requires = {
