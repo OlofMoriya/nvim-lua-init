@@ -92,6 +92,18 @@ function M.setup()
       use('eandrju/cellular-automaton.nvim')
       use('nullchilly/fsread.nvim')
       use('folke/tokyonight.nvim')
+      use {
+          'nvim-treesitter/nvim-treesitter',
+          run = function()
+              local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+              ts_update()
+          end,
+      }
+      use {
+          'prettier/vim-prettier',
+          run = 'yarn install',
+          ft = {'tsx', 'jsx', 'typescriptreact', 'javascriptreact', 'javascript', 'typescript', 'css', 'less', 'scss', 'graphql', 'vue', 'html'}
+      }
 
     if packer_bootstrap then
       print "Restart Neovim required after installation!"
