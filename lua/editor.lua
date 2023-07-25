@@ -20,6 +20,11 @@ vim.opt.incsearch = true
 
 vim.opt.colorcolumn = "80"
 
+vim.cmd("set cursorline")
+vim.cmd("hi CursorLine guibg=#1f1d2e")
+vim.cmd("hi CursorLineNr gui=bold guifg=#f6c177 guibg=#1f1d2e")
+
+
 -- Highlight on yank
 vim.cmd [[
   augroup YankHighlight

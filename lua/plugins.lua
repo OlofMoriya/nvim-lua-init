@@ -45,19 +45,12 @@ function M.setup()
     use('theprimeagen/harpoon')
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
-    -- Packer
     use({
-        "jackMort/ChatGPT.nvim",
-        config = function()
-            require("chatgpt").setup({
-                -- optional configuration
-            })
-        end,
+        "kdheepak/lazygit.nvim",
+        -- optional for floating window border decoration
         requires = {
-            "MunifTanjim/nui.nvim",
             "nvim-lua/plenary.nvim",
-            "nvim-telescope/telescope.nvim"
-        }
+        },
     })
     use {
 	  'VonHeikemen/lsp-zero.nvim',
@@ -104,7 +97,19 @@ function M.setup()
           run = 'yarn install',
           ft = {'tsx', 'jsx', 'typescriptreact', 'javascriptreact', 'javascript', 'typescript', 'css', 'less', 'scss', 'graphql', 'vue', 'html'}
       }
+      use('mfussenegger/nvim-dap')
+      use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+      use("solidjs-community/solid-snippets")
 
+      use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+      use "m4xshen/hardtime.nvim"
+      use {
+         'numToStr/Comment.nvim',
+        config = function()
+        require('Comment').setup()
+        end
+        }
+   
     if packer_bootstrap then
       print "Restart Neovim required after installation!"
       require("packer").sync()

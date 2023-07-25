@@ -1,7 +1,3 @@
-local lsp = require('lsp-zero')
-
-lsp.preset('recommended')
-lsp.setup()
 
 require("harpoon").setup()
 
@@ -23,10 +19,12 @@ require('telescope').setup{
 	},
     pickers = {
         find_files = {
-            hidden = true
+            hidden = true,
+            theme = "dropdown",
         }, 
         live_grep = {
-            hidden = true
+            hidden = true,
+            theme = "dropdown",
         },
         buffers = {
             sort_lastused = true,

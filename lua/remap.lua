@@ -30,6 +30,7 @@ vim.keymap.set("n", "<leader>nn", ":noh<C-m>")
 
 -- Open explorer
 vim.keymap.set("n", "<C-w>w", ":Explore<CR>")
+vim.keymap.set("n", "-", ":Explore<CR>")
 
 -- New tab
 vim.keymap.set("n", "tn", ":tab new<CR>")
