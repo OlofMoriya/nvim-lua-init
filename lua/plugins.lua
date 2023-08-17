@@ -67,6 +67,8 @@ function M.setup()
               {'saadparwaiz1/cmp_luasnip'},
               {'hrsh7th/cmp-nvim-lsp'},
               {'hrsh7th/cmp-nvim-lua'},
+               { "davidsierradz/cmp-conventionalcommits" },
+               
 
               -- Snippets
               {'L3MON4D3/LuaSnip'},
@@ -78,6 +80,11 @@ function M.setup()
           -- or                            , branch = '0.1.x',
           requires = { {'nvim-lua/plenary.nvim'} }
       }
+     
+    -- lists
+
+    use({ "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" })
+    use({ "folke/trouble.nvim", requires = "nvim-tree/nvim-web-devicons" })
 
       use('nvim-lualine/lualine.nvim')
       use('lewis6991/gitsigns.nvim')
@@ -109,6 +116,7 @@ function M.setup()
         require('Comment').setup()
         end
         }
+      use "sindrets/diffview.nvim"
    
     if packer_bootstrap then
       print "Restart Neovim required after installation!"

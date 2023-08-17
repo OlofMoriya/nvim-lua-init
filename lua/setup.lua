@@ -2,10 +2,18 @@
 require("harpoon").setup()
 
 require('lualine').setup({
-	options = {
-	  icons_enabled = true,
-	  theme = 'auto'
-  }
+    options = {
+        icons_enabled = true,
+        theme = 'auto',
+    }, 
+    sections = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = {'filename','diff', 'diagnostics'},
+        lualine_x = {'branch'},
+        lualine_y = {},
+        lualine_z = {}
+    },
 })
 
 

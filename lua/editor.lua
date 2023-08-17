@@ -20,6 +20,8 @@ vim.opt.incsearch = true
 
 vim.opt.colorcolumn = "80"
 
+vim.opt.laststatus = 3
+
 vim.cmd("set cursorline")
 vim.cmd("hi CursorLine guibg=#1f1d2e")
 vim.cmd("hi CursorLineNr gui=bold guifg=#f6c177 guibg=#1f1d2e")

@@ -1,7 +1,6 @@
 vim.keymap.set("n", "<leader>f", ":LspZeroFormat<CR>")
 
 local lsp = require('lsp-zero')
-local cmp = require('cmp')
 
 lsp.preset('recommended')
 
@@ -13,6 +12,5 @@ local nvim_lsp = require('lspconfig')
 lsp.configure('csharp_ls', {
     root_dir = nvim_lsp.util.root_pattern('*.sln', '.git')
 })
-
 
 lsp.setup()
