@@ -95,6 +95,11 @@ _G.packer_plugins = {
     path = "/home/olof/.local/share/nvim/site/pack/packer/start/cmp-buffer",
     url = "https://github.com/hrsh7th/cmp-buffer"
   },
+  ["cmp-conventionalcommits"] = {
+    loaded = true,
+    path = "/home/olof/.local/share/nvim/site/pack/packer/start/cmp-conventionalcommits",
+    url = "https://github.com/davidsierradz/cmp-conventionalcommits"
+  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/home/olof/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
@@ -115,6 +120,11 @@ _G.packer_plugins = {
     path = "/home/olof/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["diffview.nvim"] = {
+    loaded = true,
+    path = "/home/olof/.local/share/nvim/site/pack/packer/start/diffview.nvim",
+    url = "https://github.com/sindrets/diffview.nvim"
+  },
   ["eyeliner.nvim"] = {
     loaded = true,
     path = "/home/olof/.local/share/nvim/site/pack/packer/start/eyeliner.nvim",
@@ -130,10 +140,25 @@ _G.packer_plugins = {
     path = "/home/olof/.local/share/nvim/site/pack/packer/start/fsread.nvim",
     url = "https://github.com/nullchilly/fsread.nvim"
   },
+  fzf = {
+    loaded = true,
+    path = "/home/olof/.local/share/nvim/site/pack/packer/start/fzf",
+    url = "https://github.com/junegunn/fzf"
+  },
+  ["fzf.vim"] = {
+    loaded = true,
+    path = "/home/olof/.local/share/nvim/site/pack/packer/start/fzf.vim",
+    url = "https://github.com/junegunn/fzf.vim"
+  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/home/olof/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
+  ["hardtime.nvim"] = {
+    loaded = true,
+    path = "/home/olof/.local/share/nvim/site/pack/packer/start/hardtime.nvim",
+    url = "https://github.com/m4xshen/hardtime.nvim"
   },
   harpoon = {
     loaded = true,
@@ -203,6 +228,11 @@ _G.packer_plugins = {
     path = "/home/olof/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/home/olof/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/nvim-tree/nvim-web-devicons"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/olof/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -223,10 +253,25 @@ _G.packer_plugins = {
     path = "/home/olof/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["todo-comments.nvim"] = {
+    loaded = true,
+    path = "/home/olof/.local/share/nvim/site/pack/packer/start/todo-comments.nvim",
+    url = "https://github.com/folke/todo-comments.nvim"
+  },
   ["tokyonight.nvim"] = {
     loaded = true,
     path = "/home/olof/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
+  },
+  ["trouble.nvim"] = {
+    loaded = true,
+    path = "/home/olof/.local/share/nvim/site/pack/packer/start/trouble.nvim",
+    url = "https://github.com/folke/trouble.nvim"
+  },
+  ["twilight.nvim"] = {
+    loaded = true,
+    path = "/home/olof/.local/share/nvim/site/pack/packer/start/twilight.nvim",
+    url = "https://github.com/folke/twilight.nvim"
   },
   undotree = {
     loaded = true,
@@ -244,6 +289,11 @@ _G.packer_plugins = {
     only_cond = false,
     path = "/home/olof/.local/share/nvim/site/pack/packer/opt/vim-prettier",
     url = "https://github.com/prettier/vim-prettier"
+  },
+  ["zen-mode.nvim"] = {
+    loaded = true,
+    path = "/home/olof/.local/share/nvim/site/pack/packer/start/zen-mode.nvim",
+    url = "https://github.com/folke/zen-mode.nvim"
   }
 }
 
@@ -264,6 +314,10 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
+vim.cmd [[au FileType jsx ++once lua require("packer.load")({'vim-prettier'}, { ft = "jsx" }, _G.packer_plugins)]]
+vim.cmd [[au FileType typescriptreact ++once lua require("packer.load")({'vim-prettier'}, { ft = "typescriptreact" }, _G.packer_plugins)]]
+vim.cmd [[au FileType javascriptreact ++once lua require("packer.load")({'vim-prettier'}, { ft = "javascriptreact" }, _G.packer_plugins)]]
+vim.cmd [[au FileType javascript ++once lua require("packer.load")({'vim-prettier'}, { ft = "javascript" }, _G.packer_plugins)]]
 vim.cmd [[au FileType typescript ++once lua require("packer.load")({'vim-prettier'}, { ft = "typescript" }, _G.packer_plugins)]]
 vim.cmd [[au FileType css ++once lua require("packer.load")({'vim-prettier'}, { ft = "css" }, _G.packer_plugins)]]
 vim.cmd [[au FileType less ++once lua require("packer.load")({'vim-prettier'}, { ft = "less" }, _G.packer_plugins)]]
@@ -273,10 +327,6 @@ vim.cmd [[au FileType vue ++once lua require("packer.load")({'vim-prettier'}, { 
 vim.cmd [[au FileType html ++once lua require("packer.load")({'vim-prettier'}, { ft = "html" }, _G.packer_plugins)]]
 vim.cmd [[au FileType markdown ++once lua require("packer.load")({'markdown-preview.nvim'}, { ft = "markdown" }, _G.packer_plugins)]]
 vim.cmd [[au FileType tsx ++once lua require("packer.load")({'vim-prettier'}, { ft = "tsx" }, _G.packer_plugins)]]
-vim.cmd [[au FileType jsx ++once lua require("packer.load")({'vim-prettier'}, { ft = "jsx" }, _G.packer_plugins)]]
-vim.cmd [[au FileType typescriptreact ++once lua require("packer.load")({'vim-prettier'}, { ft = "typescriptreact" }, _G.packer_plugins)]]
-vim.cmd [[au FileType javascriptreact ++once lua require("packer.load")({'vim-prettier'}, { ft = "javascriptreact" }, _G.packer_plugins)]]
-vim.cmd [[au FileType javascript ++once lua require("packer.load")({'vim-prettier'}, { ft = "javascript" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
 vim.cmd("augroup END")
 vim.cmd [[augroup filetypedetect]]

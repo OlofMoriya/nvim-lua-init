@@ -1,1 +1,1 @@
-vim.cmd "autocmd BufWritePre *.tsx,*.ts Prettier"
+vim.cmd "autocmd BufWritePre *.tsx,*.ts,*.js,*.jsx Prettier"

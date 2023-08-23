@@ -69,3 +69,8 @@ vim.keymap.set("n", "<A-j>", "<C-\\><C-n><C-w>j")
 vim.keymap.set("n", "<A-k>", "<C-\\><C-n><C-w>k")
 vim.keymap.set("n", "<C-w>%", ":vsplit<C-m>")
 vim.keymap.set("n", "<C-w>\"", ":split<C-m>")
+
+vim.keymap.set("n", "<leader>c", ":vim // % | :copen<CR>") 
+vim.keymap.set("n", "<leader>v", ":ccl | noh <CR>") 
+vim.keymap.set("n", "<space>n", ":cnext<CR>")
+vim.keymap.set("n", "<space>N", ":cprev<CR>")

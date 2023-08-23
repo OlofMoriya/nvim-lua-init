@@ -45,6 +45,7 @@ function M.setup()
     use('theprimeagen/harpoon')
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
+    
     use({
         "kdheepak/lazygit.nvim",
         -- optional for floating window border decoration
@@ -52,6 +53,7 @@ function M.setup()
             "nvim-lua/plenary.nvim",
         },
     })
+
     use {
 	  'VonHeikemen/lsp-zero.nvim',
 	  requires = {
@@ -117,7 +119,12 @@ function M.setup()
         end
         }
       use "sindrets/diffview.nvim"
-   
+
+      use { 'junegunn/fzf', run = ":call fzf#install()" }
+      use { 'junegunn/fzf.vim' }
+      use {"folke/twilight.nvim",}
+      use { 'folke/zen-mode.nvim' }
+
     if packer_bootstrap then
       print "Restart Neovim required after installation!"
       require("packer").sync()

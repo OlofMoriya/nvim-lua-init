@@ -28,15 +28,12 @@ require('telescope').setup{
     pickers = {
         find_files = {
             hidden = true,
-            theme = "dropdown",
         }, 
         live_grep = {
             hidden = true,
-            theme = "dropdown",
         },
         buffers = {
             sort_lastused = true,
-            theme = "dropdown",
             mappings = {
                 n = {
                     ["<c-d>"] = require("telescope.actions").delete_buffer,
