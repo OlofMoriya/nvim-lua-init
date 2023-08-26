@@ -5,6 +5,6 @@ vim.keymap.set("n", "<space>b", ":Telescope buffers theme=ivy<CR>")
 vim.keymap.set("n", "<space>a", ":Telescope treesitter theme=ivy<CR>")
 vim.keymap.set("n", "<space>r", ":Telescope lsp_references theme=ivy<CR>")
 vim.keymap.set("n", "<space>d", ":Telescope lsp_definitions theme=ivy<CR>")
-vim.keymap.set("n", "<space>t", ":Telescope lsp_deagnistics theme=ivy<CR>")
+vim.keymap.set("n", "<space>t", ":Telescope lsp_diagnistics theme=ivy<CR>")
 vim.keymap.set("n", "<space>Q", ":Telescope quickfixhistory theme=ivy<CR>")
 
