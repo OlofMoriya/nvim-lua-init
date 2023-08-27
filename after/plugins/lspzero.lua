@@ -4,8 +4,8 @@ local lsp = require('lsp-zero')
 
 lsp.preset('recommended')
 
-vim.keymap.set({ "i", "s" }, "<C-Space>", function() require'luasnip'.jump(1) end, { desc = "LuaSnip forward jump" })
-vim.keymap.set({ "i", "s" }, "<S-Space>", function() require'luasnip'.jump(-1) end, { desc = "LuaSnip backward jump" })
+vim.keymap.set({ "i", "s" }, "<C-Space>", function() require 'luasnip'.jump(1) end, { desc = "LuaSnip forward jump" })
+vim.keymap.set({ "i", "s" }, "<S-Space>", function() require 'luasnip'.jump(-1) end, { desc = "LuaSnip backward jump" })
 
 
 local nvim_lsp = require('lspconfig')
