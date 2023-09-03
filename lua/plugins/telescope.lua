@@ -16,6 +16,7 @@ return {
     },
     config = {
         defaults = {
+            hidden = true, 
             file_ignore_patterns = { ".node-gyp/", ".node-gyp/*", "node-gyp", ".git/", ".git/*", ".cache",
                 "./node_modules/*", "node_modules", "^node_modules/*", "node_modules/*", "yarn.lock" },
             path_display = { "truncate" }
