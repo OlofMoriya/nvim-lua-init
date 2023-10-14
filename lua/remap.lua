@@ -1,5 +1,5 @@
 -- Go to init folder
-vim.keymap.set("n", "<space><space>i", ":e ~/AppData/Local/nvim/<CR>")
+vim.keymap.set("n", "<space><space>i", ":e ~/.config/nvim/<CR>")
 
 -- Move lines
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -20,6 +20,7 @@ vim.keymap.set("v", "<leader>y", "\"+y")
 vim.keymap.set("n", "<leader>Y", "\"+Y")
 
 vim.keymap.set("n", "<leader>d", "\"_d")
+vim.keymap.set("n", "<leader>D", "\"_D")
 vim.keymap.set("v", "<leader>d", "\"_d")
 
 -- Replace text
@@ -43,24 +44,24 @@ vim.keymap.set("n" ,"<leader>ni", ":set nu rnu<CR>")
 vim.keymap.set("n", "<leader>ss", ":!tmux popup -E bash tmux-sessionizer.sh<CR>")
 
 -- Automatic start command for rust, bash, and dotnet
-vim.api.nvim_create_autocmd("FileType", {
-      pattern = "rust",
-      callback = function()
-        vim.keymap.set("n" ,"<leader>r", ":!cargo run<cr>")
-      end,
-    })
-vim.api.nvim_create_autocmd("FileType", {
-      pattern = "cs",
-      callback = function()
-        vim.keymap.set("n" ,"<leader>r", ":!dotnet run<cr>")
-      end,
-    })
-vim.api.nvim_create_autocmd("FileType", {
-      pattern = "sh",
-      callback = function()
-        vim.keymap.set("n" ,"<leader>r", ":!bash %<cr>")
-      end,
-    })
+-- vim.api.nvim_create_autocmd("FileType", {
+--       pattern = "rust",
+--       callback = function()
+--         vim.keymap.set("n" ,"<leader>r", ":!cargo run<cr>")
+--       end,
+--     })
+-- vim.api.nvim_create_autocmd("FileType", {
+--       pattern = "cs",
+--       callback = function()
+--         vim.keymap.set("n" ,"<leader>r", ":!dotnet run<cr>")
+--       end,
+--     })
+-- vim.api.nvim_create_autocmd("FileType", {
+--       pattern = "sh",
+--       callback = function()
+--         vim.keymap.set("n" ,"<leader>r", ":!bash %<cr>")
+--       end,
+--     })
     
 -- for working with term in split
 vim.keymap.set("n", "<A-h>", "<C-\\><C-n><C-w>h")
@@ -70,6 +71,7 @@ vim.keymap.set("n", "<A-k>", "<C-\\><C-n><C-w>k")
 vim.keymap.set("n", "<C-w>%", ":vsplit<C-m>")
 vim.keymap.set("n", "<C-w>\"", ":split<C-m>")
 
+vim.keymap.set("n", "<leader>C", ":vim // * | :copen<CR>") 
 vim.keymap.set("n", "<leader>c", ":vim // % | :copen<CR>") 
 vim.keymap.set("n", "<leader>v", ":ccl | noh <CR>") 
 vim.keymap.set("n", "<space>n", ":cnext<CR>")

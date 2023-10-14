@@ -7,7 +7,7 @@ return {
         end,
         config = {
             -- A list of parser names, or "all"
-            ensure_installed = { "javascript", "typescript", "c_sharp", "lua", "rust", "svelte" },
+            ensure_installed = { "astro", "javascript", "typescript", "c_sharp", "lua", "rust", "svelte", "http", "json" },
 
             -- Install parsers synchronously (only applied to `ensure_installed`)
             sync_install = false,

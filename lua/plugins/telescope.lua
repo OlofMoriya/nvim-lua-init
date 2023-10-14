@@ -12,7 +12,8 @@ return {
         { "<space>r", ":Telescope lsp_references theme=ivy<CR>" },
         { "<space>d", ":Telescope lsp_definitions theme=ivy<CR>" },
         { "<space>t", ":Telescope lsp_diagnistics theme=ivy<CR>" },
-        { "<space>Q", ":Telescope quickfixhistory theme=ivy<CR>" },
+        { "<space>q", ":Telescope quickfixhistory theme=ivy<CR>" },
+        { "<space>c", ":Telescope resume<CR>" },
     },
     config = {
         defaults = {
