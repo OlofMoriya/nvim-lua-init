@@ -1,78 +1,106 @@
+local opts = { noremap = true, silent = true }
+local keymap = vim.keymap
+
 -- Go to init folder
-vim.keymap.set("n", "<space><space>i", ":e ~/.config/nvim/<CR>")
+keymap.set("n", "<space><space>i", ":e ~/.config/nvim/<CR>")
 
 -- Move lines
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
-vim.keymap.set("n", "J", "mzJ`z")
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
+keymap.set("n", "J", "mzJ`z")
+keymap.set("n", "<C-d>", "<C-d>zz")
+keymap.set("n", "<C-u>", "<C-u>zz")
+keymap.set("n", "n", "nzzzv")
+keymap.set("n", "N", "Nzzzv")
 
 -- greatest remap ever
-vim.keymap.set("x", "<leader>p", "\"_dP")
+keymap.set("x", "<leader>p", "\"_dP")
 
 -- next greatest remap ever : asbjornHaland
-vim.keymap.set("n", "<leader>y", "\"+y")
-vim.keymap.set("v", "<leader>y", "\"+y")
-vim.keymap.set("n", "<leader>Y", "\"+Y")
+keymap.set("n", "<leader>y", "\"+y")
+keymap.set("v", "<leader>y", "\"+y")
+keymap.set("n", "<leader>Y", "\"+Y")
 
-vim.keymap.set("n", "<leader>d", "\"_d")
-vim.keymap.set("n", "<leader>D", "\"_D")
-vim.keymap.set("v", "<leader>d", "\"_d")
+keymap.set("n", "<leader>d", "\"_d")
+keymap.set("n", "<leader>D", "\"_D")
+keymap.set("v", "<leader>d", "\"_d")
 
 -- Replace text
-vim.keymap.set("n", "<leader>r", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
+keymap.set("n", "<leader>r", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 
 -- remove highlights
-vim.keymap.set("n", "<leader>nn", ":noh<C-m>")
+keymap.set("n", "<leader>nn", ":noh<C-m>")
 
 -- Open explorer
-vim.keymap.set("n", "<C-w>w", ":Explore<CR>")
-vim.keymap.set("n", "-", ":Explore<CR>")
+keymap.set("n", "<C-w>w", ":Explore<CR>")
+keymap.set("n", "-", ":Explore<CR>")
 
 -- New tab
-vim.keymap.set("n", "tn", ":tab new<CR>")
+keymap.set("n", "tn", ":tab new<CR>")
 
 -- Remove and reapply numbers
-vim.keymap.set("n" ,"<leader>no", ":set nonumber nornu<CR>")
-vim.keymap.set("n" ,"<leader>ni", ":set nu rnu<CR>")
+keymap.set("n" ,"<leader>no", ":set nonumber nornu<CR>")
+keymap.set("n" ,"<leader>ni", ":set nu rnu<CR>")
 
 -- Floating session switcher
-vim.keymap.set("n", "<leader>ss", ":!tmux popup -E bash tmux-sessionizer.sh<CR>")
+keymap.set("n", "<leader>ss", ":!tmux popup -E bash tmux-sessionizer.sh<CR>")
 
 -- Automatic start command for rust, bash, and dotnet
 -- vim.api.nvim_create_autocmd("FileType", {
 --       pattern = "rust",
 --       callback = function()
---         vim.keymap.set("n" ,"<leader>r", ":!cargo run<cr>")
+--         keymap.set("n" ,"<leader>r", ":!cargo run<cr>")
 --       end,
 --     })
 -- vim.api.nvim_create_autocmd("FileType", {
 --       pattern = "cs",
 --       callback = function()
---         vim.keymap.set("n" ,"<leader>r", ":!dotnet run<cr>")
+--         keymap.set("n" ,"<leader>r", ":!dotnet run<cr>")
 --       end,
 --     })
 -- vim.api.nvim_create_autocmd("FileType", {
 --       pattern = "sh",
 --       callback = function()
---         vim.keymap.set("n" ,"<leader>r", ":!bash %<cr>")
+--         keymap.set("n" ,"<leader>r", ":!bash %<cr>")
 --       end,
 --     })
-    
--- for working with term in split
-vim.keymap.set("n", "<A-h>", "<C-\\><C-n><C-w>h")
-vim.keymap.set("n", "<A-l>", "<C-\\><C-n><C-w>l")
-vim.keymap.set("n", "<A-j>", "<C-\\><C-n><C-w>j")
-vim.keymap.set("n", "<A-k>", "<C-\\><C-n><C-w>k")
-vim.keymap.set("n", "<C-w>%", ":vsplit<C-m>")
-vim.keymap.set("n", "<C-w>\"", ":split<C-m>")
 
-vim.keymap.set("n", "<leader>C", ":vim // * | :copen<CR>") 
-vim.keymap.set("n", "<leader>c", ":vim // % | :copen<CR>") 
-vim.keymap.set("n", "<leader>v", ":ccl | noh <CR>") 
-vim.keymap.set("n", "<space>n", ":cnext<CR>")
-vim.keymap.set("n", "<space>N", ":cprev<CR>")
+-- Open last search in quickfix list
+keymap.set("n", "<leader>C", ":vim // * | :copen<CR>")
+-- only the current file in search 
+keymap.set("n", "<leader>c", ":vim // % | :copen<CR>")
+
+-- quickfix keymaps
+keymap.set("n", "<leader>v", ":ccl | noh <CR>")
+keymap.set("n", "<space>n", ":cnext<CR>")
+keymap.set("n", "<space>N", ":cprev<CR>")
+
+-- Tabs
+keymap.set("n", "<tab>", ":tabnext<CR>", opts)
+keymap.set("n", "<s-tab>", ":tabprev<CR>", opts)
+
+-- Splits
+keymap.set("n", "<C-w>%", ":vsplit<C-m>")
+keymap.set("n", "<C-w>\"", ":split<C-m>")
+keymap.set("n", "<space>ss", ":split<CR>", opts)
+keymap.set("n", "<space>sv", ":vsplit<CR>", opts)
+keymap.set("n", "<space>sh", "<C-w>h")
+keymap.set("n", "<space>sj", "<C-w>j")
+keymap.set("n", "<space>sk", "<C-w>k")
+keymap.set("n", "<space>sl", "<C-w>l")
+
+-- Diagnostics
+keymap.set("n", "<leader>j", function()
+    vim.diagnostic.goto_prev()
+end, opts)
+keymap.set("n", "<leader>k", function()
+    vim.diagnostic.goto_next()
+end, opts)
+
+-- Open AI plugin
+
+keymap.set("v", "<space>v", ":lua require('test-chat').replace()<CR>")
+keymap.set("n", "<space>v", ":lua require('test-chat').ask()<CR>")
+
+
