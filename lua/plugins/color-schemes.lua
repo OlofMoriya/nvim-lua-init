@@ -1,5 +1,11 @@
 return {
     {
+        "craftzdog/solarized-osaka.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {},
+    },
+    {
         "rose-pine/neovim",
     },
     {
@@ -12,12 +18,17 @@ return {
         priority = 1000,
         opts = {},
     },
-    { "catppuccin/nvim", 
-        name = "catppuccin", 
+    {
+        "catppuccin/nvim",
+        name = "catppuccin",
         priority = 1000,
 
         config = function()
             vim.cmd "colorscheme catppuccin-frappe"
         end,
+    },
+    {
+        "olimorris/onedarkpro.nvim",
+        priority = 1000
     }
 }
