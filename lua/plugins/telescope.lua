@@ -14,6 +14,7 @@ return {
         { "<space>t", ":Telescope lsp_diagnistics theme=ivy<CR>" },
         { "<space>q", ":Telescope quickfixhistory theme=ivy<CR>" },
         { "<space>c", ":Telescope resume<CR>" },
+        { "<space>j", ":Telescope jumplist<CR>" },
     },
     config = {
         defaults = {
