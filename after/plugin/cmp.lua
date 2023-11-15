@@ -1,11 +1,6 @@
 local cmp = require "cmp"
 
 cmp.setup {
-    snippet = {
-        expand = function(args)
-            vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-        end,
-    },
     mapping = {
         ["<Up>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
         ["<Down>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
@@ -21,7 +16,7 @@ cmp.setup {
     },
     sources = cmp.config.sources({
         { name = "nvim_lsp" },
-        { name = "vsnip" }, -- For vsnip users.
+        { name = "luasnip" },
     }, {
         { name = "buffer" },
     }),
@@ -35,21 +30,17 @@ cmp.setup.filetype("gitcommit", {
     }),
 })
 
-cmp.setup.cmdline("/", {
+cmp.setup.cmdline({"/", "?"}, {
     sources = {
         { name = "buffer" },
     },
 })
 
 cmp.setup.cmdline(':', {
-  mapping = {
-    ['<Tab>'] = function()
-      --local cmp = require 'cmp'
-      if cmp.visible() then
-        cmp.select_next_item()
-      else
-        vim.fn.feedkeys('<C-z>', 'nt')
-      end
-    end,
-  }
-})
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = cmp.config.sources({
+      { name = 'path' }
+    }, {
+      { name = 'cmdline' }
+    })
+  })
