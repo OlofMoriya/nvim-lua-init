@@ -22,7 +22,14 @@ return {
             { "davidsierradz/cmp-conventionalcommits" },
 
             -- snippets
-            { 'l3mon4d3/luasnip' },
+            -- { 'l3mon4d3/luasnip' },
+            {
+                "L3MON4D3/LuaSnip",
+                -- follow latest release.
+                version = "v2.2", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+                -- install jsregexp (optional!).
+                build = "make install_jsregexp"
+            },
             { 'rafamadriz/friendly-snippets' },
             { "solidjs-community/solid-snippets" }
         },
