@@ -8,6 +8,9 @@ return {
     },
     {
         'lewis6991/gitsigns.nvim',
-        config = {}
+        config = {},
+        keys = {
+            { "<space>bl", ":Gitsigns blame_line<CR>" }
+        }
     },
 }
