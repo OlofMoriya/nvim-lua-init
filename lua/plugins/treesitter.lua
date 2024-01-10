@@ -1,21 +1,22 @@
 return {
     {
         'nvim-treesitter/nvim-treesitter',
-        build = function()
-            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-            ts_update()
-        end,
-        config = {
+        build = ":TSUpdate",
+        dependencies = {
+            "nvim-treesitter/nvim-treesitter-textobjects",
+        },
+        opts = {
             -- A list of parser names, or "all"
-            ensure_installed = { "astro", "javascript", "typescript", "c_sharp", "lua", "rust", "svelte", "http", "json" },
-
+            ensure_installed = { "c_sharp", "astro", "javascript", "typescript", "c_sharp", "lua", "rust", "svelte", "http", "json" },
             -- Install parsers synchronously (only applied to `ensure_installed`)
             sync_install = false,
 
             -- Automatically install missing parsers when entering buffer
             -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
             auto_install = true,
-
+            indent = {
+                enable = true
+            },
             highlight = {
                 -- `false` will disable the whole extension
                 enable = true,
