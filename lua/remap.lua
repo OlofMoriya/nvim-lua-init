@@ -29,6 +29,7 @@ keymap.set("v", "<leader>d", "\"_d")
 -- Replace text
 keymap.set("n", "<leader>r", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 
+
 -- remove highlights
 keymap.set("n", "<leader>nn", ":noh<C-m>")
 
@@ -91,16 +92,18 @@ keymap.set("n", "<space>sk", "<C-w>k")
 keymap.set("n", "<space>sl", "<C-w>l")
 
 -- Diagnostics
-keymap.set("n", "<leader>j", function()
-    vim.diagnostic.goto_prev()
-end, opts)
-keymap.set("n", "<leader>k", function()
-    vim.diagnostic.goto_next()
-end, opts)
+keymap.set("n", "[e", function() vim.diagnostic.goto_prev({severity=vim.diagnostic.severity.ERROR}) end)
+keymap.set("n", "]e", function() vim.diagnostic.goto_next({severity=vim.diagnostic.severity.ERROR}) end)
+keymap.set("n", "[w", function() vim.diagnostic.goto_prev({severity=vim.diagnostic.severity.WARNING}) end)
+keymap.set("n", "]w", function() vim.diagnostic.goto_next({severity=vim.diagnostic.severity.WARNING}) end)
+
+-- Buffers 
+keymap.set("n", "[b", "<cmd>bprevious<cr>", { desc = "Prev buffer", })
+keymap.set("n", "]b", "<cmd>bnext<cr>", { desc = "Next buffer", })
 
 -- Open AI plugin
 
 keymap.set("v", "<space>v", ":lua require('test-chat').replace()<CR>")
+keymap.set("v", "<space>vv", ":lua require('test-chat').replacellama()<CR>")
 keymap.set("n", "<space>v", ":lua require('test-chat').ask()<CR>")
-
 
