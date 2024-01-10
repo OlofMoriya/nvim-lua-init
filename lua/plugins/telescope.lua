@@ -8,7 +8,7 @@ return {
         { "<space>l", ":Telescope live_grep theme=ivy<CR>" },
         { "<space>q", ":Telescope quickfix theme=ivy<CR>" },
         { "<space>b", ":Telescope buffers theme=ivy<CR>" },
-        { "<space>a", ":Telescope treesitter theme=ivy<CR>" },
+        -- { "<space>a", ":Telescope treesitter theme=ivy<CR>" },
         { "<space>r", ":Telescope lsp_references theme=ivy<CR>" },
         { "<space>d", ":Telescope lsp_definitions theme=ivy<CR>" },
         { "<space>t", ":Telescope lsp_diagnistics theme=ivy<CR>" },
