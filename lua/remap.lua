@@ -77,9 +77,10 @@ keymap.set("n", "<leader>v", ":ccl | noh <CR>")
 keymap.set("n", "<space>n", ":cnext<CR>")
 keymap.set("n", "<space>N", ":cprev<CR>")
 
--- Tabs
-keymap.set("n", "<tab>", ":tabnext<CR>", opts)
-keymap.set("n", "<s-tab>", ":tabprev<CR>", opts)
+-- -- Tabs
+-- If Tab is mapped C-i doesn't work
+-- keymap.set("n", "<tab>", ":tabnext<CR>", opts)
+-- keymap.set("n", "<s-tab>", ":tabprev<CR>", opts)
 
 -- Splits
 keymap.set("n", "<C-w>%", ":vsplit<C-m>")
@@ -90,6 +91,7 @@ keymap.set("n", "<space>sh", "<C-w>h")
 keymap.set("n", "<space>sj", "<C-w>j")
 keymap.set("n", "<space>sk", "<C-w>k")
 keymap.set("n", "<space>sl", "<C-w>l")
+keymap.set("n", "<space>so", "<C-w>o")
 
 -- Diagnostics
 keymap.set("n", "[e", function() vim.diagnostic.goto_prev({severity=vim.diagnostic.severity.ERROR}) end)
@@ -107,3 +109,4 @@ keymap.set("v", "<space>v", ":lua require('test-chat').replace()<CR>")
 keymap.set("v", "<space>vv", ":lua require('test-chat').replacellama()<CR>")
 keymap.set("n", "<space>v", ":lua require('test-chat').ask()<CR>")
 
+keymap.set("n", "<C-I>", "<C-I>")
